@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnMate AI | Personal Learning Agent</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="logo">L</span> LearnMate <span class="ai">AI</span></a>
+    <span class="tagline">Your personal learning companion</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">PERSONALIZED LEARNING, MADE SIMPLE</p>
+        <h1>Learn smarter.<br><span>At your own pace.</span></h1>
+        <p class="intro">Tell LearnMate what you want to learn. Get a study plan, practise with a quiz, and track your progress.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">✦</div>
+    </section>
+
+    <section class="setup panel">
+      <div class="section-heading">
+        <div><p class="eyebrow">GET STARTED</p><h2>Create your learning plan</h2></div>
+        <span class="step">01 / PLAN</span>
+      </div>
+      <form id="planForm">
+        <label for="topic">What do you want to learn?</label>
+        <input id="topic" type="text" placeholder="e.g. JavaScript, Python, Data Structures" required>
+        <div class="form-grid">
+          <div>
+            <label for="level">Your current level</label>
+            <select id="level">
+              <option value="Beginner">Beginner</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Advanced">Advanced</option>
+            </select>
+          </div>
+          <div>
+            <label for="minutes">Available study time</label>
+            <select id="minutes">
+              <option value="15">15 minutes</option>
+              <option value="30" selected>30 minutes</option>
+              <option value="45">45 minutes</option>
+              <option value="60">60 minutes</option>
+            </select>
+          </div>
+        </div>
+        <button class="primary" type="submit">Generate my learning plan <span>→</span></button>
+      </form>
+    </section>
+
+    <section id="planSection" class="panel hidden">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR PERSONAL PLAN</p><h2 id="planTitle">Your learning path</h2></div>
+        <span class="step">02 / LEARN</span>
+      </div>
+      <p id="planSummary" class="muted"></p>
+      <div id="lessons" class="lesson-list"></div>
+    </section>
+
+    <section id="quizSection" class="panel hidden">
+      <div class="section-heading">
+        <div><p class="eyebrow">CHECK YOUR UNDERSTANDING</p><h2>Quick knowledge check</h2></div>
+        <span class="step">03 / PRACTISE</span>
+      </div>
+      <p class="muted">A short sample quiz to demonstrate how LearnMate checks learning progress.</p>
+      <div id="quiz"></div>
+      <div id="quizResult" class="result hidden" aria-live="polite"></div>
+    </section>
+
+    <section class="panel progress-panel">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR ACTIVITY</p><h2>Learning progress</h2></div>
+        <span class="step">04 / TRACK</span>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong id="completedCount">0</strong><span>Lessons completed</span></div>
+        <div class="stat"><strong id="bestScore">—</strong><span>Best quiz score</span></div>
+        <div class="stat"><strong id="plansMade">0</strong><span>Plans created</span></div>
+      </div>
+      <button id="resetBtn" class="text-button" type="button">Reset demo progress</button>
+    </section>
+    <footer>LearnMate AI · Hackathon prototype · Built for personalized learning</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
